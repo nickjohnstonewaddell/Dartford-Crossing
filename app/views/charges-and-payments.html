@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Charges and payments
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Charges and payments
+      </h1>
+
+      <p class="govuk-body">How much you pay to cross depends on:</p>
+
+      <ul class="govuk-body">
+        <li>the time of the day (charges are between 6am and 10pm)</li>
+        <li>the type of vehicle you’re driving</li>
+        <li>if you already have an account</li>
+        <li>if you're disabled</li>
+        <li>if you get the local resident discount</li>
+      </ul>
+
+      <p>You do not need to pay the charge if you get free UK vehicle tax because of a disability. Your vehicle will be checked automatically when you cross - you do not need to do anything. Find out how to <a href="https://www.gov.uk/get-vehicle-tax-exemption-disability">get free vehicle tax if you’re a driver with a disability.</a></p>
+
+      <h2 class="govuk-heading-l">
+        Charges
+      </h2>
+
+      {% from "govuk/components/table/macro.njk" import govukTable %}
+
+      {{ govukTable({
+        caption: "Cars and motorcycles",
+        captionClasses: "govuk-table__caption--m",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Type of vehicle",
+            classes: 'govuk-!-width-one-half'
+          },
+          {
+            text: "Vehicle class"
+          },
+          {
+            text: "One-off payment"
+          },
+          {
+            text: "If you have an account"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Motorcycles, mopeds and quad bikes"
+            },
+            {
+              text: "A"
+            },
+            {
+              text: "Free"
+            },
+            {
+              text: "Free"
+            }
+          ],
+          [
+            {
+              text: "Cars (including trailers), motorhomes and any minibuses that have 9 or fewer seats (including the driver’s seat)"
+            },
+            {
+              text: "B"
+            },
+            {
+              text: "£2.50",
+              format: "numeric"
+            },
+            {
+              text: "£2.00",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+            {{ govukTable({
+              caption: "Buses, coaches, vans and other goods vehicles",
+              captionClasses: "govuk-table__caption--m",
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Type of vehicle",
+                  classes: 'govuk-!-width-one-half'
+                },
+                {
+                  text: "Vehicle class"
+                },
+                {
+                  text: "One-off payment"
+                },
+                {
+                  text: "If you have an account"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    text: "Vehicles with 2 axles"
+                  },
+                  {
+                    text: "C"
+                  },
+                  {
+                    text: "£3.00",
+                    format: "numeric"
+                  },
+                  {
+                    text: "£2.63",
+                    format: "numeric"
+                  }
+                ],
+                [
+                  {
+                    text: "Vehicles with more than 2 axles"
+                  },
+                  {
+                    text: "D"
+                  },
+                  {
+                    text: "£6.00",
+                    format: "numeric"
+                  },
+                  {
+                    text: "£5.19",
+                    format: "numeric"
+                  }
+                ]
+              ]
+            }) }}
+
+            <p>Count droppable axles whether they’re up or down. Only count trailer axles for articulated vehicles.</p>
+
+            <h2 class="govuk-heading-l">
+              Local resident discount
+            </h2>
+
+            <p>You can apply for a discount if you pay Council Tax to Dartford borough council or Thurrock council. You can <a href="https://www.gov.uk/find-local-council">find out which is your local council.</a></p>
+
+            <p class="govuk-body">You can either:</p>
+
+            <ul class="govuk-body">
+              <li>pay £20 a year to use the Dartford Crossing as many times as you want</li>
+              <li>pay £10 for 50 crossings, plus 20p for each additional crossing</li>
+            </ul>
+
+            <p><a href="https://www.dartford-crossing-charge.service.gov.uk/Home/BeforeYouStart?_ga=2.164447999.1966421807.1636366083-1301594543.1635853463">Apply for a local resident discount online</a> or <a href="https://www.gov.uk/government/publications/set-up-or-cancel-a-dart-charge-account-by-post">by post</a>.</p>
+
+            <h2 class="govuk-heading-l">
+              Fines
+            </h2>
+
+            <p>You can get a £70 fine if you do not pay the charge. You must pay it within 28 days.</p>
+
+            <p class="govuk-body">The fine will be:</p>
+
+            <ul class="govuk-body">
+              <li>reduced to £35 if you pay within 14 days</li>
+              <li>increased to £105 if you do not pay it - you’ll also have to pay the crossing charge</li>
+            </ul>
+
+            <p>You can <a href="https://www.dartford-crossing-charge.service.gov.uk/PcnPayment/SearchMultiplePCN?_ga=2.4679027.1966421807.1636366083-1301594543.1635853463">pay or challenge the fine online</a> or call the Dart Charge contact centre.</p>
+
+            <h2 class="govuk-heading-l">
+              Dart Charge contact centre
+            </h2>
+
+            <p>Telephone: 0300 300 0120</p>
+            <p>Textphone: 18001 0300 300 0120</p>
+            <p>Every day, 8am to 8pm</p>
+            <p>Find out about <a href="https://www.gov.uk/call-charges">call charges</a>.</p>
+    </div>
+  </div>
+
+{% endblock %}

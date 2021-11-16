@@ -1,0 +1,112 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Pay the Dart Charge
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Section</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link">Subsection</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>Use this service to pay the Dart Charge.</p>
+
+            {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+            {{ govukWarningText({
+              text: "You must pay the charge if you use the Dartford Crossing between 6am and 10pm. You can get a fine if you're late or do not pay.",
+              iconFallbackText: "Warning"
+            }) }}
+
+      <p>You can also use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>pay or challenge a penalty charge notice (PCN)</li>
+        <li>pay for future crossings automatically by creating an account</li>
+        <li>apply for a local resident discount</li>
+        <li>check your crossing and payment history</li>
+      </ul>
+
+      <p>Payment is due by midnight the day after you cross. Charges apply every day - including weekends and bank holidays - and also apply to non-UK registered vehicles.</p>
+
+      <p><a href="#">How much you pay</a> depends on the type of vehicle and if you already have an account.</p>
+
+      <a href="#" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>If you’ve already set up an account, <a href="#">sign in</a> to manage your account or pay the charge.</p>
+
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+            {{ govukDetails({
+              summaryText: "Other ways to pay",
+              text: "You can pay with cash at your nearest Payzone store, set up an account by post, pay in advance or top-up your account by post, pay or set up an account by phone."
+            }) }}
+
+      {{ govukDetails({
+        summaryText: "Call the Dart Charge contact centre",
+        text: "Telephone: 0300 300 0120. Textphone: 18001 0300 300 0120. Every day, 8am to 8pm. Find out about call charges."
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="govuk-visually-hidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
