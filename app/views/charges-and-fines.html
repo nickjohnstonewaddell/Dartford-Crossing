@@ -73,7 +73,12 @@
         <li>£5.19 if you have a pre-pay account</li>
       </ul>
 
-      <p>Count droppable axles whether they’re up or down. Only count trailer axles for articulated vehicles.</p>
+      {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+      {{ govukDetails({
+        summaryText: "How to determine the number of axles",
+        text: "Lift axles (also called retractable axles or droppable axles) can be raised so that the tyres are not touching the road. Count these whether they’re up or down. Only count trailer axles for articulated vehicles."
+      }) }}
 
       <h2 class="govuk-heading-l">
         Fines
@@ -84,12 +89,20 @@
       <ul class="govuk-list govuk-list--bullet">
         <li>£35 if paid within 14 days</li>
         <li>£70 if paid within 28 days</li>
-        <li>£105 if not paid within 28 days</li>
       </ul>
 
       <p>You'll need to pay the crossing charge as well as the fine.</p>
 
       <p>You can <a href="#">pay or challenge the fine online</a> or call the <a href="start#contactdartcharge">Dart Charge contact centre</a>.</p>
+
+      {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+      {{ govukWarningText({
+        text: "After 28 days the fine will increase to £105. If you continue to not pay, you may end up with a court order against you. Bailiffs (enforcement agents) may also be told to visit your home to collect what you owe.",
+        iconFallbackText: "Warning"
+      }) }}
+
+      <p>Find out more about <a href="https://www.gov.uk/parking-tickets#penalty-charge-notice-pcn">deadlines and penalties for penalty charge notices</a>.</p>
 
     </div>
   </div>
