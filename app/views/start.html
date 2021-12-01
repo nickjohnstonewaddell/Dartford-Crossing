@@ -32,11 +32,11 @@
             {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 
             {{ govukWarningText({
-              text: "Unless there's no charge, you must pay if you use the Dartford Crossing between 6am and 10pm. You can get a fine if you're late or do not pay.",
+              text: "You must pay to use the Dartford Crossing between 6am and 10pm, unless there's no charge. You can get a fine if you're late or do not pay.",
               iconFallbackText: "Warning"
             }) }}
 
-      <p>Find out about <a href="charges-and-fines">charges and fines</a>, including crossings for which there is no charge. How much you pay depends on the type of vehicle and if you already have an account.</p>
+      <p>Find out about <a href="charges-and-fines">charges and fines</a>, including crossings for which there is no charge. How much you pay depends on the type of vehicle and if you already have an account. <a href="#">Sign in to your account</a> if you have one.</p>
 
       <p>You can also use this service to:</p>
 
@@ -47,7 +47,11 @@
         <li>check your crossing and payment history</li>
       </ul>
 
-      <p>You must pay the Dart Charge by midnight the day after you cross.</p>
+      {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+      {{ govukInsetText({
+        text: "You must pay the Dart Charge by midnight the day after you cross."
+      }) }}
 
       <p>You need to pay for every time you use the crossing, including weekends and bank holidays. Non-UK registered vehicles must also pay the charge.</p>
 
@@ -73,9 +77,11 @@
         Dart Charge contact centre
       </h2>
 
-      <p>Telephone: 0300 300 0120</p>
-      <p>Textphone: 18001 0300 300 0120</p>
-      <p>You can get in touch every day, from 8am to 8pm. Find out about <a href="https://www.gov.uk/call-charges">call charges</a>.</p>
+      <div style="border-left: 1px solid #b1b4b6; padding-left: 15px; margin-bottom: 30px; margin-top: 30px;">
+        <p>Telephone: 0300 300 0120</p>
+        <p>Textphone: 18001 0300 300 0120</p>
+        <p>You can get in touch every day, from 8am to 8pm. Find out about <a href="https://www.gov.uk/call-charges">call charges</a>.</p>
+      </div>
 
     </div>
 
@@ -91,12 +97,6 @@
               <a href="charges-and-fines">
                 Understanding charges and fines
               </a>
-            </li>
-            <li>
-              <a href="#">
-                Sign in to your account
-              </a>
-              if you have one
             </li>
             <li>
               <a href="https://www.gov.uk/government/collections/dart-charge">
