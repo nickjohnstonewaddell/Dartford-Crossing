@@ -18,13 +18,53 @@
       </h1>
 
       <p>Contents</p>
-      <p>— <a href="#no-charge">No charge</a><br>
-      — <a href="#lrds">Local resident discount scheme</a><br>
+      <p>
       — <a href="#cars">Cars, motorhomes and minibuses</a><br>
-      — <a href="#hgvs">Buses, coaches, vans and other goods vehicles</a><br>
-      — <a href="#fines">Fines</a></p>
+      — <a href="#hgvs">Goods vehicles, buses, coaches and vans</a><br>
+      — <a href="#no-charge">No charge</a><br>
+      — <a href="#lrds">Local resident discount scheme</a><br>
+      — <a href="#fines">Fines (penalty charge notices)</a>
+    </p>
 
       <p>You can <a href="#">check the charge for a particular vehicle</a> by entering its number plate.</p>
+
+            <h2 id="cars" class="govuk-heading-l">
+              Cars, motorhomes and minibuses
+            </h2>
+
+            <p>This includes cars with trailers. It only includes minibuses that have 9 or fewer seats (including the driver’s seat).</p>
+
+            <p>The cost is:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>£2.50 as a one-off payment</li>
+              <li>£2.00 if you have a pre-pay account</li>
+            </ul>
+
+            <h2 id="hgvs" class="govuk-heading-l">
+              Goods vehicles, buses, coaches and vans
+            </h2>
+
+            <p>If the vehicle has 2 axles, the cost is:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>£3.00 as a one-off payment</li>
+              <li>£2.63 if you have a pre-pay account</li>
+            </ul>
+
+            <p>If the vehicle has more than 2 axles, the cost is:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+              <li>£6.00 as a one-off payment</li>
+              <li>£5.19 if you have a pre-pay account</li>
+            </ul>
+
+            {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+            {{ govukDetails({
+              summaryText: "How to determine the number of axles",
+              text: "Lift axles (also called retractable axles or droppable axles) can be raised so that the tyres are not touching the road. Count these whether they’re up or down. Only count trailer axles for articulated vehicles."
+            }) }}
 
       <h2 id="no-charge" class="govuk-heading-l">
         No charge
@@ -51,46 +91,8 @@
 
       <p>Find your <a href="https://www.gov.uk/find-local-council">local council</a>.</p>
 
-      <h2 id="cars" class="govuk-heading-l">
-        Cars, motorhomes and minibuses
-      </h2>
-
-      <p>This includes cars with trailers. It only includes minibuses that have 9 or fewer seats (including the driver’s seat).</p>
-
-      <p>The cost is:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>£2.50 as a one-off payment</li>
-        <li>£2.00 if you have a pre-pay account</li>
-      </ul>
-
-      <h2 id="hgvs" class="govuk-heading-l">
-        Buses, coaches, vans and other goods vehicles
-      </h2>
-
-      <p>If the vehicle has 2 axles, the cost is:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>£3.00 as a one-off payment</li>
-        <li>£2.63 if you have a pre-pay account</li>
-      </ul>
-
-      <p>If the vehicle has more than 2 axles, the cost is:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>£6.00 as a one-off payment</li>
-        <li>£5.19 if you have a pre-pay account</li>
-      </ul>
-
-      {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-      {{ govukDetails({
-        summaryText: "How to determine the number of axles",
-        text: "Lift axles (also called retractable axles or droppable axles) can be raised so that the tyres are not touching the road. Count these whether they’re up or down. Only count trailer axles for articulated vehicles."
-      }) }}
-
       <h2 id="fines" class="govuk-heading-l">
-        Fines
+        Fines (penalty charge notices)
       </h2>
 
       <p>You will get a fine if you do not pay the charge. You must pay it within 28 days. The fine is:</p>
@@ -111,7 +113,7 @@
         iconFallbackText: "Warning"
       }) }}
 
-      <p>Find out more about <a href="https://www.gov.uk/parking-tickets#penalty-charge-notice-pcn">deadlines and penalties for penalty charge notices</a>.</p>
+      <p>Find out more about dealing with <a href="https://www.gov.uk/parking-tickets#penalty-charge-notice-pcn">penalty charge notices</a>.</p>
 
     </div>
   </div>
