@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Understanding charges and fines
+  Understanding charges, discounts and fines
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,7 +14,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-xl">
-        Understanding charges and fines
+        Understanding charges, discounts and fines
       </h1>
 
       <p>Contents</p>
@@ -22,9 +22,11 @@
       — <a href="#cars">Cars, motorhomes and minibuses</a><br>
       — <a href="#hgvs">Goods vehicles, buses, coaches and vans</a><br>
       — <a href="#no-charge">No charge</a><br>
-      — <a href="#lrds">Local resident discount scheme</a><br>
+      — <a href="#lrds">Local resident discount</a><br>
       — <a href="#fines">Fines (penalty charge notices)</a>
     </p>
+
+    {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
       <p>You can <a href="#">check the charge for a particular vehicle</a> by entering its number plate.</p>
 
@@ -79,10 +81,10 @@
       </ul>
 
       <h2 id="lrds" class="govuk-heading-l">
-        Local resident discount scheme
+        Local resident discount
       </h2>
 
-      <p>If you pay council tax to Dartford Borough Council or Thurrock Council and are part of the local resident discount scheme, the annual cost is either:</p>
+      <p>If you pay council tax to Dartford Borough Council or Thurrock Council you can get the local resident discount. The annual cost is either:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>£20.00 for as many crossings as you want</li>
