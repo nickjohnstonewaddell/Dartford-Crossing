@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign up for Dartford Crossing alerts
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Sign up for Dartford Crossing alerts
+      </h1>
+
+      <p>If you have a <a href="#">Dart Charge account</a>, payment will be taken automatically each time you use the Dartford Crossing.</p>
+
+      <p>If you do not want to create an account at the moment, you can enter your details below. We'll send you an email and/or text message payment reminder every time you use the Dartford Crossing.</p>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  label: {
+    text: "What is your number plate?",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  id: "number-plate",
+  name: "number-plate"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "What is your mobile number?",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  id: "mobile-number",
+  name: "mobile-number"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "What is your email address?",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  id: "email-address",
+  name: "email-address"
+}) }}
+
+
+      <form action="/confirmation" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Submit
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
