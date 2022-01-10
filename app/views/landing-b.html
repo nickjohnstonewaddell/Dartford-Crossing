@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Landing page
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <span class="govuk-caption-xl">Pay for the Dartford Crossing (Dart Charge)</span>
+
+      <h1 class="govuk-heading-xl">
+        What would you like to do?
+      </h1>
+
+                  <form class="form" action="/landing-choice-b" method="post">
+
+      <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="dart-charge" name="dart-charge" type="radio" value="one-off">
+        <label class="govuk-label govuk-radios__label" for="dart-charge">
+          <h3 class="govuk-heading-s">Pay for crossings without an account</h3>
+          <p style="margin: -10px 0 0 0;">You can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>pay for crossings you've made since yesterday</li>
+            <li>pay for future crossings, such as a return journey</li>
+          </ul>
+        </label>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="dart-charge-2" name="dart-charge" type="radio" value="account">
+        <label class="govuk-label govuk-radios__label" for="dart-charge-2">
+          <h3 class="govuk-heading-s">Sign in or create an account</h3>
+          <p style="margin: -10px 0 0 0;">Easily pay for future crossings. With an account you can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>pre-pay – get a discount of up to 20% on all crossings</li>
+            <li>pay as you go – no discount but payments are taken automatically</li>
+            <li>get a local resident discount (if you live in Dartford or Thurrock)</li>
+          </ul>
+        </label>
+      </div>
+      <div class="govuk-radios__item" style="margin: -20px 0 0 0;">
+        <input class="govuk-radios__input" id="dart-charge-3" name="dart-charge" type="radio" value="pcn">
+        <label class="govuk-label govuk-radios__label" for="dart-charge-3">
+          <h3 class="govuk-heading-s">Resolve a penalty charge notice (PCN)</h3>
+          <p style="margin: -10px 0 0 0;">You can:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>pay the penalty charge</li>
+            <li>challenge a PCN you believe should not have been issued</li>
+          </ul>
+        </label>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+    </div>
+  </div>
+
+  </form>
+
+{% endblock %}
